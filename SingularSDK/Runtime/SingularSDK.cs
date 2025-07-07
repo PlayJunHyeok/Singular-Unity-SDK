@@ -1273,6 +1273,7 @@ namespace Singular
             transactionData["pn"] = product.metadata.localizedTitle;
             transactionData["pcc"] = product.metadata.isoCurrencyCode;
             transactionData["pp"] = (double)product.metadata.localizedPrice;
+            transactionData["r"] = (double)product.metadata.localizedPrice;
         }
 
         transactionData["ps"] = @"a";
@@ -1288,6 +1289,7 @@ namespace Singular
         if (isRestored) {
             transactionData["original_price"] = transactionData["pp"];
             transactionData["pp"] = 0.0;
+	    transactionData["r"] = 0.0;
         }
 
         if (attributes != null) {
